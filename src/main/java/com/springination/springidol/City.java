@@ -5,6 +5,12 @@ public class City implements Cities {
     private String population;
     private String state;
 
+    public City(String name, String population, String state) {
+        this.name = name;
+        this.population = population;
+        this.state = state;
+    }
+
     public City() {
 
     }
@@ -39,4 +45,14 @@ public class City implements Cities {
     public void cityList() {
         System.out.println(name);
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "name='" + name + '\'' +
+                ", population='" + population + '\'' +
+                ", state='" + state + '\'' +
+                '}';
+    }
 }
+
