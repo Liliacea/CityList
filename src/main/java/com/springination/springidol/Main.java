@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<City>cities = new ArrayList<>();
+       /* ArrayList<City>cities = new ArrayList<>();
         City moscow = new City("Moscow","12335654","RF");
         City spb = new City ("spb","456878797", "RF");
         cities.add(moscow);
@@ -15,7 +15,9 @@ public class Main {
         System.out.println(cities.get(0).toString());
 
 
-        /*ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
+        */
+
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
         Cities cities = (Cities) ctx.getBean("cities") ;
@@ -24,7 +26,7 @@ public class Main {
         ctx.close();
 
 
-         */
+         
 
     }
 }
