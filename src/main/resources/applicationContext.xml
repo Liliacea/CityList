@@ -12,10 +12,50 @@
 
     <util:list id="cities">
         <bean class="com.springination.springidol.City"
-              p:name="Chicago" p:state="IL" p:population="2853114"/>
+              p:name="Chicago" p:state="IL" p:population="99"/>
         <bean class="com.springination.springidol.City"
-              p:name = "Moscow" p:state="RU" p:population="2564855"/>
+              p:name = "Moscow" p:state="RU" p:population="105"/>
+        <bean class="com.springination.springidol.City"
+              p:name = "spb" p:state="RU" p:population="120"/>
+        <bean class="com.springination.springidol.City"
+              p:name = "odessa" p:state="ua" p:population="78"/>
+        <bean class="com.springination.springidol.City"
+              p:name = "london" p:state="bk" p:population="2564855"/>
     </util:list>
+    <bean id="allCities"
+          class="com.springination.springidol.City">
+        <property name="cities" value="#{cities}"/>
+    </bean>
+
+
+    <bean id="chosenCity"
+          class="com.springination.springidol.ChosenCity">
+    <property name="city" value="#{cities[1]}"/>
+    </bean>
+
+    <bean id="chosenCity1"
+          class="com.springination.springidol.ChosenCity">
+        <property name="city" value="#{cities[T(java.lang.Math).random() * cities.size()]}"/>
+    </bean>
+
+
+    <bean id="cityMap"
+          class="com.springination.springidol.City"/>
+
+   <!-- <util:map id="citiesMap">
+        <entry key="Dalas" value="USA"></entry>
+        <entry key="Moscow" value="russia"></entry>
+    </util:map>
+    <bean id="chosenCity2"
+          class="com.springination.springidol.ChosenCity">
+        <property name="city" value="#{citiesMap['Dalas']}"/>
+    </bean> -->
+    <bean id="bigCities"
+          class="com.springination.springidol.City">
+        <property name ="bigCities" value="#{cities.?[population gt 100]}"/>
+    </bean>
+    
+
 
 
 </beans>

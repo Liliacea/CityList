@@ -1,11 +1,17 @@
 package com.springination.springidol;
 
+import java.util.ArrayList;
+
 public class City implements Cities {
     private  String name;
-    private String population;
+    private int population;
     private String state;
 
-    public City(String name, String population, String state) {
+
+    ArrayList<City> bigCities;
+    ArrayList<City> cities;
+
+    public City(String name, int population, String state) {
         this.name = name;
         this.population = population;
         this.state = state;
@@ -13,6 +19,22 @@ public class City implements Cities {
 
     public City() {
 
+    }
+
+    public ArrayList<City> getCities() {
+        return cities;
+    }
+
+    public void setCities(ArrayList<City> cities) {
+        this.cities = cities;
+    }
+
+    public ArrayList<City> getBigCities() {
+        return bigCities;
+    }
+
+    public void setBigCities(ArrayList<City> bigCities) {
+        this.bigCities = bigCities;
     }
 
     public String getName() {
@@ -23,11 +45,11 @@ public class City implements Cities {
         this.name = name;
     }
 
-    public String getPopulation() {
+    public int getPopulation() {
         return population;
     }
 
-    public void setPopulation(String population) {
+    public void setPopulation(int population) {
         this.population = population;
     }
 

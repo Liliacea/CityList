@@ -3,6 +3,7 @@ package com.springination.springidol;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,9 +21,12 @@ public class Main {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-        Cities cities = (Cities) ctx.getBean("cities") ;
-
-        cities.cityList();
+     //   ArrayList<City> cities = (ArrayList<City>)ctx.getBean("cities") ;
+  //  ChosenCity city = (ChosenCity)ctx.getBean("chosenCity");
+       // Map<String,String> map = (Map<String,String>)ctx.getBean("cityMap");
+     // ArrayList<ChosenCity> bigCities = (ArrayList<ChosenCity>) ctx.getBean("bigCities");
+      //  City bigCities = (City)ctx.getBean("bigCities");
+        City cities = (City)ctx.getBean("allCities") ;
         ctx.close();
 
 
